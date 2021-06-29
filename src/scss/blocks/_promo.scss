@@ -1,0 +1,114 @@
+.promo {
+    position: relative;
+    color: $text-color;
+    min-height: 70vh;
+
+    &__wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 100px 150px;
+
+        p {
+            margin-top: 50px;
+            text-align: center;
+            line-height: 30px;
+        }
+    }
+
+    &::before {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        content: '';
+        width: 500px;
+        height: 500px;
+        border-radius: 100%;
+        background-color: $second-color;
+        z-index: -2;
+    }
+
+    &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        content: '';
+        width: 300px;
+        height: 300px;
+        border-radius: 100%;
+        background-color: $first-color;
+        z-index: -1;
+    }
+
+    &__button {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin-top: 50px;
+
+        a {
+            display: block;
+            padding: 15px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+        }
+
+        a:first-child {
+            background-color: $first-color;
+            color: #fff;
+        }
+
+        a:last-child {
+            background-color: $second-color;
+            color: #fff;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .promo {
+        &__wrapper {
+            padding: 100px 0px;
+        }
+
+        &__button {
+            a:last-child {
+                background-color: $first-color;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .promo {
+        &::after {
+            width: 200px;
+            height: 200px;
+        }
+
+        &::before {
+            width: 300px;
+            height: 300px;
+            bottom: 30%;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .promo {
+        &__button {
+            flex-direction: column;
+            align-items: center;
+
+            a:first-child {
+                margin-top: 20px;
+            }
+
+            a:last-child {
+                order: -1;
+            }
+        }
+    }
+}

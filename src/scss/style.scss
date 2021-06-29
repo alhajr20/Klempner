@@ -1,0 +1,50 @@
+@import 'base/*.scss';
+@import 'global/*.scss';
+@import '**/_*.scss';
+@import '../components/**/*.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Blocks */
+@import './blocks/header';
+@import './blocks/promo';
+@import './blocks/about';
+@import './blocks/advantages';
+@import './blocks/services';
+@import './blocks/contacts';
+
+.footer {
+    background-color: $first-color;
+    text-align: center;
+    color: $text-color;
+    margin-top: 30px;
+
+    &__wrapper {
+        padding: 50px 150px;
+
+        p {
+            margin-top: 20px;
+        }
+
+        span {
+            display: block;
+            margin-top: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .footer {
+        &__wrapper {
+            padding: 50px 0;
+        }
+    }
+}
